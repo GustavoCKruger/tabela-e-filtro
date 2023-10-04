@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista nomes</title>
+    <script>
+        function filtra() {
+            const filtro = document.getElementById("txtFiltro").value.toUpperCase();
+
+            const lis = document.getElementsByTagName("li");
+
+            for (const li of lis) {
+                if (filtro == "") {
+                    li.style.display = 'block';
+                    li.style.fontWeight = 'normal';
+                }
+                else if (li.innerText.startsWith(filtro)) {
+                    li.style.display = 'block';
+                    li.style.fontWeight = 'bold'
+                }
+                else {
+                    li.style.display = 'block';
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: palegreen;
+        }
+
+        .formu {
+            margin: 10% 0px 0px 40%;
+            border: 1px black solid;
+            max-width: 9.87%;
+            border-radius: 10px;
+            min-height: 270px;
+            background: paleturquoise;
+        }
+        .tabuadaNM{
+            margin: 10px 0px 0px 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="formu">
+        <form>
+            <div class="tabuadaNM">
+                <label for="">Filtro: </label>
+            </div>
+            <input type="text" id="txtFiltro" oninput="filtra();">
+        </form>
+        <ul>
+            <li>João</li>
+            <li>Matheus</li>
+            <li>Yohana</li>
+            <li>Manuela</li>
+            <li>Daniel</li>
+            <li>Kolosque</li>
+            <li>Bomsenhor</li>
+            <li>Vinicius</li>
+            <li>Eduarda</li>
+        </ul>
+    </div>
+</body>
+
+</html>

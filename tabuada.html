@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabuada</title>
+    <script>
+        function tabua() {
+            let num = document.getElementById("txtTabuada").value;
+
+            document.getElementById("resultado").innerHTML = "";
+            for (let contador = 0; contador <= 10; contador++) {
+                const resultado = num * contador;
+                document.getElementById("resultado").innerHTML += num + " X " + contador + " = " + resultado + "<br>"
+            }
+        }
+    </script>
+    <style>
+        body{
+            background: palegreen;
+        }
+        .formu {
+            margin: 10% 0px 0px 40%;
+            border: 1px black solid;
+            max-width: 9.87%;
+            border-radius: 10px;
+            min-height: 270px;
+            background: paleturquoise;
+        }
+
+        #resultado {
+            margin: 20px 0px 10px 5%;
+        }
+
+        #txtTabuada {
+            border: none;
+            background: palevioletred;
+
+        }
+        .tabuadaNM{
+            margin: 10px 0px 0px 30%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="formu">
+        <form>
+            <div class="tabuadaNM">
+                <label for="">Tabuada:</label>
+            </div>
+            <input type="number" id="txtTabuada" oninput="tabua();">
+        </form>
+        <div id="resultado">
+
+        </div>
+    </div>
+</body>
+
+</html>
